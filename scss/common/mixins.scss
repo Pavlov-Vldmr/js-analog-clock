@@ -1,0 +1,13 @@
+@mixin font-size-weight($size, $weight){
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin transform-scale($scale){
+    -webkit-transform: scale($scale);
+    transform: scale($scale);
+}
+@mixin z-index($index){
+    @extend %pos-absolute;
+    z-index: $index;
+}

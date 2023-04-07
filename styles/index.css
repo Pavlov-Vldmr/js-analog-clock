@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@font-face {
+  font-family: "bebasneuebold";
+  src: url("/assets/fonts/bebasneuebold.woff2");
+}
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("/assets/fonts/OpenSans-Bold.ttf");
+}
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("/assets/fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: "OpenSans-ExtraBold";
+  src: url("/assets/fonts/OpenSans-ExtraBold.ttf");
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body .container .clock, body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: "OpenSans-Regular";
+  color: #202020;
+  font-size: 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #111;
+}
+body .container {
+  position: relative;
+}
+body .container .circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: 2s ease-in infinite alternate;
+}
+body .container .circle:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: -100px;
+  left: -100px;
+  background: linear-gradient(#07648f, #4824aa);
+  animation-name: move-up;
+}
+body .container .circle:nth-child(2) {
+  width: 250px;
+  height: 250px;
+  top: 200px;
+  left: 200px;
+  background: linear-gradient(#7acc0e, #cf8a21);
+  animation-name: move-down;
+}
+body .container .clock {
+  width: 350px;
+  height: 350px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+body .container .clock__bg img {
+  filter: sepia(100%);
+}
+body .container .clock::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 15;
+}
+body .container .clock__hour, body .container .clock__minute, body .container .clock__second {
+  position: absolute;
+}
+body .container .clock__hour .hr,
+body .container .clock__hour .min,
+body .container .clock__hour .sec, body .container .clock__minute .hr,
+body .container .clock__minute .min,
+body .container .clock__minute .sec, body .container .clock__second .hr,
+body .container .clock__second .min,
+body .container .clock__second .sec {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+body .container .clock__hour .hr::before, body .container .clock__minute .hr::before, body .container .clock__second .hr::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: #aed456;
+  z-index: 10;
+  border-radius: 10px;
+}
+body .container .clock__hour .min::before, body .container .clock__minute .min::before, body .container .clock__second .min::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  background: #5c42a5;
+  z-index: 11;
+  border-radius: 8px;
+}
+body .container .clock__hour .sec::before, body .container .clock__minute .sec::before, body .container .clock__second .sec::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  width: 2px;
+  height: 180px;
+  background: #db3333;
+  z-index: 12;
+  border-radius: 2px;
+}
+@keyframes move-up {
+  to {
+    transform: translateY(-10px);
+  }
+}
+@keyframes move-down {
+  to {
+    transform: translateY(5px);
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
